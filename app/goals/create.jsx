@@ -8,25 +8,25 @@ const Create = () => {
   const [goal, setGoal] = useState('')
   const { createGoal } = useGoals()
   const router = useRouter
-  
+ 
   const handleSubmit = async () => {
     await createGoal({
       goal,
       progress:0
     })
     setGoal('')
-    <Keyboard.dismiss()
+    Keyboard.dismiss()
     router.push('/goals')
 
   }
 
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.title}>Create a New Goal Teerak</Text>
+      <Text style={styles.title}>Create a New Goal</Text>
 
       <TextInput
         style={styles.input}
-        placeholder="What's your goal?"
+        placeholder="What do you want to do?"
         value={goal}
         onChangeText={setGoal}
       />
@@ -53,13 +53,14 @@ const styles = StyleSheet.create({
     width: 300,
     backgroundColor: 'white',
     padding: 20,
-    borderRadius: 50,
+    borderRadius: 8,
     marginVertical: 40,
   },
   button: {
     padding: 18,
-    backgroundColor: '#8A9A5B',
+    backgroundColor: '#21cc8d',
     color: 'white',
-    borderRadius: 50,
+    borderRadius: 8,
   }
 })
+
